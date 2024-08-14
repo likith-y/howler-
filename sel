@@ -1,1 +1,20 @@
-sel
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+public class SeleniumTest {
+    public static void main(String[] args) {
+        ChromeDriver driver = new ChromeDriver();
+        try {
+                     driver.get("C:\\devops\\Myproject\\index.html");
+            WebElement button = driver.findElement(By.tagName("button"));
+            button.click();
+            driver.switchTo().alert().accept();
+            System.out.println("Test passed!");
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Test failed!");
+        } finally {
+            //driver.quit();
+        }
+    }
+}
